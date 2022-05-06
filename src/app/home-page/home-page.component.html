@@ -1,0 +1,15 @@
+<ng-container *ngIf="allTodos$ | async">
+    
+</ng-container>
+
+<div class="todo-list-container">
+    <div class="create-todos-block">
+        <button mat-raised-button class="creaate-todo-button" (click)="openDialog()">+Add ToDo</button>
+    </div>
+    <div class="todos-data-block">
+        <app-todos-data></app-todos-data>
+    </div>
+    <div class="todos-block">
+        TODOS
+    </div>
+</div>
