@@ -1,0 +1,18 @@
+<form class="modal-container" 
+     [formGroup] = "addTaskForm"
+     (ngSubmit)="setNewTodo()">
+    <h1 mat-dialog-title>Add New ToDo</h1>
+    <mat-form-field appearance="fill">
+        <mat-label>Title</mat-label>
+        <input type="text" 
+               matInput 
+               maxlength="70"
+               placeholder="Enter ToDo Title"
+               formControlName="title">
+    </mat-form-field>
+    <div mat-dialog-actions>
+        <button mat-button [disabled]="addTaskForm.invalid" type="submit">Add ToDo</button>
+        <button mat-button (click)="onCloseModal()">Close</button>
+    </div>
+</form>
+

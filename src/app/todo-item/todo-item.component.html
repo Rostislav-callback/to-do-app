@@ -1,0 +1,8 @@
+<mat-card class="card-body">
+    <h2 class="card-title">{{titleProps}}</h2>
+    <mat-checkbox class="checkbox" 
+                  [checked]="isCompletedProps" 
+                  (change)="onChangeCheck($event)">
+        Done
+    </mat-checkbox> 
+</mat-card>
