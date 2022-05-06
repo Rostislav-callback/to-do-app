@@ -1,0 +1,28 @@
+.card-body {
+    height: 65px;
+    max-height: 65px;
+    display: flex;
+    gap: 20px;
+    justify-content: space-between;
+    overflow: hidden;
+    text-align: left;
+    margin-bottom: 15px;
+
+    .card-title {
+        width: fit-content;
+        margin: 0;
+    }
+
+    .checkbox {
+       align-self: center;
+    }
+}
+
+::ng-deep .mat-checkbox-checked.mat-accent .mat-checkbox-background {
+    background-color: black !important;
+}
+
+::ng-deep .mat-checkbox-ripple .mat-ripple-element {
+    background-color: black !important;
+  }
+

@@ -1,15 +1,25 @@
-<ng-container *ngIf="allTodos$ | async">
-    
-</ng-container>
-
-<div class="todo-list-container">
+<div class="todo-list-container" *ngIf="todosData$ | async as data">
     <div class="create-todos-block">
         <button mat-raised-button class="creaate-todo-button" (click)="openDialog()">+Add ToDo</button>
     </div>
-    <div class="todos-data-block">
-        <app-todos-data></app-todos-data>
-    </div>
-    <div class="todos-block">
-        TODOS
-    </div>
+    <ng-container *ngIf="allTodos$ | async as todos">
+        <div class="todos-data-block">
+            <app-todos-data [total]="data.total"
+                            [completed]="data.completed"
+                            [unfulfilled]="data.unfulfilled">
+            </app-todos-data>
+        </div>
+        <div class="todos-block">
+            <div *ngFor="let todo of todos">
+                <app-todo-item [title]="todo.title" [id]="todo.id" [isCompleted]="todo.completed"></app-todo-item>
+            </div>
+        </div>
+        <div class="pagination-block">
+            <app-pagination [total]="data.total"
+                            [limit]="limit"
+                            [url]="baseUrl"
+                            [currentPage]="currentPage">
+            </app-pagination>
+        </div>
+    </ng-container>
 </div>

@@ -5,6 +5,8 @@ import { MatButtonModule } from '@angular/material/button';
 import { HomePageComponent } from './home-page.component';
 import { TadosDataModule } from '../todos-data/todos-data.module';
 import { CreateTodoModule } from '../create-todo/create-todo.module';
+import { TodoItemModule } from '../todo-item/todo-item.module';
+import { PaginationModule } from '../pagination/pagination.module';
 
 
 
@@ -16,7 +18,9 @@ import { CreateTodoModule } from '../create-todo/create-todo.module';
     CommonModule,
     TadosDataModule,
     CreateTodoModule,
-    MatButtonModule
+    MatButtonModule,
+    TodoItemModule,
+    PaginationModule
   ]
 })
 export class HomePageModule { }
