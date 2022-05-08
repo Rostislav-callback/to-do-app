@@ -16,6 +16,16 @@
     .checkbox {
        align-self: center;
     }
+
+    .card-side-items {
+        text-align: right;
+
+        .delete-item {
+            & :hover {
+                cursor: pointer;
+            }
+        }
+    }
 }
 
 ::ng-deep .mat-checkbox-checked.mat-accent .mat-checkbox-background {
