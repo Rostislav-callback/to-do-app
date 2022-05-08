@@ -1,8 +1,16 @@
 <mat-card class="card-body">
-    <h2 class="card-title">{{titleProps}}</h2>
-    <mat-checkbox class="checkbox" 
-                  [checked]="isCompletedProps" 
+    <h2 class="card-title">{{todoProps.title}}</h2>
+    <div class="card-side-items">
+        <div class="delete-item" (click)="deleteTodo()">
+            <mat-icon>delete_sweep</mat-icon>
+        </div>
+        <mat-checkbox class="checkbox" 
+                  [checked]="todoProps.completed" 
                   (change)="onChangeCheck($event)">
-        Done
-    </mat-checkbox> 
+            Done
+        </mat-checkbox> 
+    </div>
 </mat-card>
+
+<ng-container *ngIf="checkedTask$ | async"></ng-container>
+<ng-container *ngIf="deleteTask$ | async"></ng-container>
