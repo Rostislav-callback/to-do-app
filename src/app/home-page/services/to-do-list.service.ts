@@ -124,7 +124,7 @@ export class ToDoListService {
         const newData = oldAllTodoList.filter((el: any) => el.id !== id);
 
         --newObj.total;
-        console.log(currentItem.completed)
+
         if (currentItem.completed == true) {
           --newObj.completed;
           this.todosData$.next(newObj);
