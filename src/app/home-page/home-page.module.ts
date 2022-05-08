@@ -6,7 +6,6 @@ import { HomePageComponent } from './home-page.component';
 import { TadosDataModule } from '../todos-data/todos-data.module';
 import { CreateTodoModule } from '../create-todo/create-todo.module';
 import { TodoItemModule } from '../todo-item/todo-item.module';
-import { PaginationModule } from '../pagination/pagination.module';
 
 
 
@@ -19,8 +18,7 @@ import { PaginationModule } from '../pagination/pagination.module';
     TadosDataModule,
     CreateTodoModule,
     MatButtonModule,
-    TodoItemModule,
-    PaginationModule
+    TodoItemModule
   ]
 })
 export class HomePageModule { }

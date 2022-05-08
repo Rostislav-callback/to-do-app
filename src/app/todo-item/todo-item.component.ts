@@ -1,4 +1,9 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { Observable } from 'rxjs';
+
+import { ToDoListService } from '../home-page/services/to-do-list.service';
+import { TodoResponseInterface } from '../home-page/interfaces/todoResponse.interface';
+import { ToDosDataInterface } from '../home-page/interfaces/todosData.interface';
 
 @Component({
   selector: 'app-todo-item',
@@ -6,15 +11,29 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./todo-item.component.scss']
 })
 export class TodoItemComponent implements OnInit {
-  @Input('id') idProps!: number;
-  @Input('title') titleProps!: string;
-  @Input('isCompleted') isCompletedProps!: boolean;
+  @Input('todo') todoProps!: TodoResponseInterface;
+  @Input('todosData') todosDataProps!: ToDosDataInterface;
+
+  checkedTask$!: Observable<any>;
+  deleteTask$!: Observable<any>;
 
   color: string = 'black'
 
-  constructor() { }
+  constructor(private todoListService: ToDoListService) { }
 
-  ngOnInit(): void { }
+  ngOnInit(): void { 
+    
+  }
 
-  onChangeCheck(event: any) { }
+  onChangeCheck(event: any) { 
+    const isCompletedData = {
+      completed: event.checked
+    }
+
+    this.checkedTask$ = this.todoListService.updateTodo(isCompletedData, this.todoProps.id);
+  }
+
+  deleteTodo(): void {
+    this.deleteTask$ = this.todoListService.deleteTodo(this.todoProps.id);
+  }
 }

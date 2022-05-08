@@ -1,7 +1,7 @@
 <mat-list class="list-item">
-    <mat-list-item>Amount Tasks: {{totalProps}}</mat-list-item>
+    <mat-list-item>Amount Tasks: {{todosDataProps.total}}</mat-list-item>
     <mat-divider [vertical]="true"></mat-divider>
-    <mat-list-item>Completed: {{completeProps}}</mat-list-item>
+    <mat-list-item>Completed: {{todosDataProps.completed}}</mat-list-item>
     <mat-divider [vertical]="true"></mat-divider>
-    <mat-list-item>Unfulfilled: {{unfulfilledProps}}</mat-list-item>
+    <mat-list-item>Unfulfilled: {{todosDataProps.unfulfilled}}</mat-list-item>
 </mat-list>

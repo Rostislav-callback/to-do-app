@@ -2,8 +2,10 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatCardModule } from '@angular/material/card';
 import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatIconModule } from '@angular/material/icon';
 
 import { TodoItemComponent } from './todo-item.component';
+
 
 
 
@@ -14,7 +16,8 @@ import { TodoItemComponent } from './todo-item.component';
   imports: [
     CommonModule,
     MatCardModule,
-    MatCheckboxModule
+    MatIconModule,
+    MatCheckboxModule,
   ],
   exports: [
     TodoItemComponent

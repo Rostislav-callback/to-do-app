@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { ToDosDataInterface } from '../home-page/interfaces/todosData.interface';
 
 @Component({
   selector: 'app-todos-data',
@@ -6,11 +7,11 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./todos-data.component.scss']
 })
 export class TodosDataComponent implements OnInit {
-  @Input('total') totalProps!: number;
-  @Input('completed') completeProps!: number;
-  @Input('unfulfilled') unfulfilledProps!: number;
+  @Input('todosData') todosDataProps!: ToDosDataInterface;
 
   constructor() { }
 
-  ngOnInit(): void { }
+  ngOnInit(): void { 
+    
+  }
 }
